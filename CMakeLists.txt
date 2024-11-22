@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0.2)
 project(rviz_visual_tools)
 
 if(NOT MSVC)
-  add_compile_options(-std=c++11)
+  add_compile_options(-std=c++17)
   # Warnings
   add_definitions(-W -Wall -Wextra
     #-Wcast-qual
@@ -12,6 +12,9 @@ if(NOT MSVC)
 endif()
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+#set(CMAKE_CXX_STANDARD 14)
+#set(CMAKE_CXX_STANDARD_REQUIRED ON)
+#set(CMAKE_CXX_EXTENSIONS OFF)
 
 find_package(catkin REQUIRED COMPONENTS
   eigen_stl_containers
@@ -203,3 +206,4 @@ install(TARGETS ${PROJECT_NAME}_demo ${PROJECT_NAME}_imarker_simple_demo
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
+
